@@ -27,6 +27,16 @@ nosetests.xml
 
 # npm
 node_modules/
+bower_components/
 
 # Campass
 .sass-cache
+
+# Sublime
+*.sublime-*
+
+# Other
+.env
+
+# Django
+djangular_jobs/media/
