@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+
+{% block page_title %}
+	<h1>Seeds</h1>
+{% endblock page_title %}
+
+{% block content %}
+	
+<a href="{% url 'seeds-new' %}" class="btn btn-large btn-success">add seed</a>
+
+<ul>
+	{% for seed in object_list %}
+	<li><a href="{{ seed.get_absolute_url }}">{{ seed }}</a>
+		(<a href="{% url "seeds-edit" pk=seed.id %}">edit</a>)
+	</li>
+	{% endfor %}
+</ul>
+
+{% endblock content %}

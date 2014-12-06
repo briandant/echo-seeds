@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+
+{% block page_title %}
+<h1>Delete Seed</h1>	
+{% endblock page_title %}
+
+{% block content %}
+	
+<p>Are you sure you want to delete the seed {{ seed }}?</p>
+
+<form action="{% url "seeds-delete" pk=seed.id %}" method="POST">
+	{% csrf_token %}
+
+	<input type="submit" value="Yes, delete." />
+	<a href="{% url "seeds-list" %}">No, cancel.</a>
+</form>
+
+{% endblock content %}

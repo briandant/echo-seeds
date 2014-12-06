@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+
+{% block page_title %}
+<h1>{{ seed }}</h1>
+{% endblock %}
+
+{% block content %}
+	
+<p>Accession number: {{ seed.accession_num }}</p>
+<p>Lot number: {{ seed.lot_num }}</p>
+<p>Acquisition date: {{ seed.aquisition_date }}</p>
+<p>Cost: {{ seed.cost }}</p>
+<p>Location: {{ seed.aquisition_location }}</p>
+<p>Family: {{ seed.family }}</p>
+<p>Variety: {{ seed.variety }}</p>
+<p>Scientific name: {{ seed.scientific_name }}</p>
+<p>Germination: {{ seed.germination }}</p>
+<p>Supplier: {{ seed.supplier }}</p>
+
+{% endblock content %}
+
+<!-- <ul>
+	{% for location in seed.location_set.all %}
+	<li>{{ location.name }}<br />
+		{{ location.code }}<br />
+		{{ location.type }}
+	</li>
+	{% endfor %}
+</ul> 
+-->

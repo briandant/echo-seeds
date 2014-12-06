@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+
+{% load bootstrap_tags %}
+
+{% block page_title %}
+{% if seed.id %}
+<h1>Edit Seed</h1>
+{% else %}
+<h1>Add Seed</h1>
+{% endif %}
+{% endblock page_title %}
+
+{% block content %}
+	
+<form action="{{ action }}" method="POST">
+	{% csrf_token %}
+	<ul>
+		{{ form|as_bootstrap }}
+	</ul>
+	<input type="submit" value="Save" />
+</form>
+
+{% if seed.id %}
+<a href="{% url "seeds-delete" pk=seed.id %}">Delete</a>
+{% endif %}
+
+<a href="{% url "seeds-list" %}">Back to list</a>
+
+{% endblock content %}
